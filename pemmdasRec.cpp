@@ -95,32 +95,16 @@ double pemmdasQuiz()
 {
     int times = 0;
     int score = 0;
-    int num[9] = { 0 };
-    int answer = 0;
 
-    cout << "How many problems would you like to solve?: " << endl;
+    cout << "How many problems would you like to solve: " << endl;
     cin >> times;
     int total = times;
 
-    while (times > 0)
-    {
-        cout << "What is: ";
+    double percent = pemmdasQuiz(times, score);
 
-        for (int i = 0; i < 9; i++)
-        {
-            num[i] = rand() % 21;
-            cout << num[i];
-
-            char op = "*/%+-"[rand() % 5];
-            cout << " " << op << " ";
-        }
-        cout << "?: ";
-        cin >> answer;
-        times--;
-    }
-
-    return 0;
+    cout << "You scored " << score << " out of " << total << endl << "Percent: " << percent << "%" << endl;
 }
+   
 
 double pemmdasQuiz(int times, int& score)
 {
